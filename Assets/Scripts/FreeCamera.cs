@@ -20,10 +20,6 @@ public class FreeCamera : MonoBehaviour
 		body.mass = 0.1f;
 		body.linearDamping = 10;
 	}
-	private void Update()
-	{
-		Move();
-	}
 	public void Move()
 	{
 		float h = Input.GetAxis("Horizontal");
