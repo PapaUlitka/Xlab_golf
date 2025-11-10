@@ -5,13 +5,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private FreeCamera m_camera;
     [SerializeField] private GameObject m_uiPanel;
     [SerializeField] private CloudController m_cloudController;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField] private SwapItems m_swapItems;
     void Update()
     {
         if (m_uiPanel.activeSelf)
@@ -22,6 +16,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             m_cloudController.MoveNext();
+        }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            m_swapItems.Chage();
         }
     }
 }
