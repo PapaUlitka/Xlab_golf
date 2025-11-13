@@ -8,7 +8,7 @@ namespace Golf
         [SerializeField] private float m_minAngleZ = -30;
         [SerializeField] private float m_maxAngleZ = 30;
         [SerializeField][Min(0)] private float m_speed;
-        private void Update()
+        private void FixedUpdate()
         {
             var angels = transform.localEulerAngles;
 
