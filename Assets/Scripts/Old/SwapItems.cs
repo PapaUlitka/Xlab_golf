@@ -1,23 +1,26 @@
 using NUnit.Framework;
 using UnityEngine;
 
-public class SwapItems : MonoBehaviour
+namespace Old
 {
-    [SerializeField] private GameObject[] m_items;
-    public SwapItems[] m_swapitems;
-    private void Swap()
+    public class SwapItems : MonoBehaviour
     {
-        int index = Random.Range(0, m_items.Length);
-        for (int i = 0;  i < m_items.Length; i++)
+        [SerializeField] private GameObject[] m_items;
+        public SwapItems[] m_swapitems;
+        private void Swap()
         {
-            m_items[i].SetActive(i==index);
+            int index = Random.Range(0, m_items.Length);
+            for (int i = 0; i < m_items.Length; i++)
+            {
+                m_items[i].SetActive(i == index);
+            }
         }
-    }
-    public void Chage()
-    {
-        foreach(var change in m_swapitems)
+        public void Chage()
         {
-            change.Swap();
+            foreach (var change in m_swapitems)
+            {
+                change.Swap();
+            }
         }
     }
 }
