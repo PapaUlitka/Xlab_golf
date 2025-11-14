@@ -1,18 +1,23 @@
+using System;
 using UnityEngine;
 
 namespace Golf
 {
     public class StoneComponent : MonoBehaviour
     {
+        public event Action<StoneComponent> Hit;
+        public event Action<StoneComponent> Missed;
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.CompareTag("Earth"))
+            if (collision.gameObject.GetComponent<Stick>())
             {
-                print("collide with earth");
+                Hit?.Invoke(this);
+                Debug.Log("S");
             }
-            if (collision.gameObject.CompareTag("Stick"))
+            else
             {
-                print("collide with stick");
+                Missed?.Invoke(this);
+                Debug.Log("F");
             }
         }
     }
