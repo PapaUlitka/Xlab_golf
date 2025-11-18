@@ -1,0 +1,40 @@
+using UnityEngine;
+
+namespace Golf
+{
+    public class GameStateMachine : MonoBehaviour
+    {
+        [SerializeField] private MainMenuState m_mainMenuState;
+        [SerializeField] private GameplayState m_gameplayState;
+        [SerializeField] private BootstrapState m_bootstrapState;
+
+        private void Awake()
+        {
+            m_mainMenuState.Initialize(this);
+            m_gameplayState.Initialize(this);
+            m_bootstrapState.Initialize(this);
+        }
+
+        private void Start() => Enter<BootstrapState>();
+
+        public void Enter<T>()
+        {
+            if (typeof(T) == typeof(MainMenuState))
+            {
+                m_bootstrapState.Exit();
+                m_mainMenuState.Enter();
+            }
+            else if (typeof(T) == typeof(GameplayState))
+            {
+                m_mainMenuState.Exit();
+                m_gameplayState.Enter();
+            }
+            else if (typeof(T) == typeof(BootstrapState))
+            {
+                m_bootstrapState.Enter();
+            }
+        }
+
+
+    }
+}

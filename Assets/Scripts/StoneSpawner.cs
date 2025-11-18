@@ -12,6 +12,5 @@ namespace Golf
             var prefab = m_prefabs[Random.Range(0, m_prefabs.Length)];
             return Instantiate(prefab, m_spawnPoint.position, m_spawnPoint.rotation);
         }
-
     }
 }
