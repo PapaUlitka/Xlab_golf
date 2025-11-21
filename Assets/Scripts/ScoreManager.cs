@@ -24,6 +24,9 @@ namespace Golf
             score = 0;
         }
 
-        public void Increase() => score++;
+        public void Increase()
+        {
+            score++;
+        }
     }
 }

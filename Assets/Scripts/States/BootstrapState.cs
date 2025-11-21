@@ -12,7 +12,7 @@ namespace Golf
         public void Initialize(GameStateMachine gameStateMachine)
         {
             m_levelController.enabled = false;
-            m_gameStateMachine.enabled = false;
+            m_playerController.enabled = false;
 
             m_gameStateMachine = gameStateMachine;
         }
