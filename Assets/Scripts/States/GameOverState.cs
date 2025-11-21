@@ -8,7 +8,7 @@ namespace Golf
     public class GameOverState : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI m_scoreText;
-        [SerializeField] private GameOverState m_gameOverPanel;
+        [SerializeField] private GameObject m_gameOverPanel;
         [SerializeField] private Button m_backMainMenu;
         [SerializeField] private ScoreManager m_scoreManager;
 

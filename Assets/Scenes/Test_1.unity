@@ -2744,7 +2744,11 @@ MonoBehaviour:
   m_prefabs:
   - {fileID: -7246403763786516904, guid: 2e8c9729ea1aa524dbffeca4a74f15f3, type: 3}
   - {fileID: 2664887027153334888, guid: 727a52656d069fd45ad6fb1922539bb9, type: 3}
+  - {fileID: 8363149621808538874, guid: c7aced91369a4d342b3423481f14b335, type: 3}
+  - {fileID: 6633409403828945699, guid: ca9ff34b39d3b3a4799f4e1bfa12c527, type: 3}
   m_spawnPoint: {fileID: 283565399}
+  m_lowerBound: 25
+  m_upperBound: 29
 --- !u!4 &283565399
 Transform:
   m_ObjectHideFlags: 0
@@ -2754,7 +2758,7 @@ Transform:
   m_GameObject: {fileID: 283565397}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.7379189, y: 2.9771404, z: 2.4263306}
+  m_LocalPosition: {x: 3.7379189, y: 2.132, z: 2.4263306}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4526,7 +4530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Golf.GameOverState
   m_scoreText: {fileID: 238222297}
-  m_gameOverPanel: {fileID: 442324009}
+  m_gameOverPanel: {fileID: 2146384767}
   m_backMainMenu: {fileID: 1054406783}
   m_scoreManager: {fileID: 1809730667}
 --- !u!1 &446493938 stripped
@@ -20442,7 +20446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9281b35676e9f4aab9cfe34fc7ff5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Golf.LevelController
-  m_missedCount: 3
+  m_missedCount: 50
   m_spawnRate: 1
   m_stoneSpawner: {fileID: 283565398}
   m_scoreManager: {fileID: 1809730667}
