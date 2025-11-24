@@ -8,7 +8,6 @@ namespace Golf
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Stick m_stick;
-        [SerializeField] private Button m_button;
         [SerializeField] private EventTrigger m_hitButton;
         private bool m_isDown;
 

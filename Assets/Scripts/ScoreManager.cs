@@ -12,7 +12,7 @@ namespace Golf
         public int score
         {
             get => m_score;
-            private set
+            set
             {
                 m_score = value;
                 Debug.Log($"Score: {value}");
@@ -21,15 +21,17 @@ namespace Golf
         }
         public int record
         {
-            get => PlayerPrefs.GetInt(GlobalConstants.Record, 0);
+            get
+            {
+                PlayerPrefs.DeleteKey(GlobalConstants.Record);
+                return PlayerPrefs.GetInt(GlobalConstants.Record, 100);
+            }
             private set
             {
-                var temp = PlayerPrefs.GetInt(GlobalConstants.Record, 0);
-
-                if(temp < value)
+                if(record < value)
                 {
                     PlayerPrefs.SetInt(GlobalConstants.Record, value);
-                    RecordChanged.Invoke(value);
+                    RecordChanged?.Invoke(value);
                 }
             }
         }

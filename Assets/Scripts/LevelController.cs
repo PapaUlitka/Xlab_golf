@@ -41,7 +41,7 @@ namespace Golf
                 StoneComponent stone = m_stoneSpawner.Spawn();
                 m_stones.Add(stone);
                 stone.Hit += OnHitStone;
-                stone.Missed += OnMisside;
+                stone.Missed += OnMissed;
                 m_time = 0;
             }
               
@@ -53,7 +53,7 @@ namespace Golf
             m_scoreManager.Increase();
         }
 
-        private void OnMisside(StoneComponent stone)
+        private void OnMissed(StoneComponent stone)
         {
             UnsubscribeStone(stone);
 
@@ -73,7 +73,7 @@ namespace Golf
         private void UnsubscribeStone(StoneComponent stone)
         {
             stone.Hit -= OnHitStone;
-            stone.Missed -= OnMisside;
+            stone.Missed -= OnMissed;
         }
 
     }

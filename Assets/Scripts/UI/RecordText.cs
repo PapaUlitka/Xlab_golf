@@ -13,7 +13,7 @@ namespace Golf
 
         private void OnValidate()
         {
-            if (m_text)
+            if (!m_text)
             {
                 m_text = GetComponent<TMP_Text>();
             }
@@ -25,17 +25,16 @@ namespace Golf
             m_scoreManager.RecordChanged += OnRecordChanged;
         }
 
-        private void OnRecordChanged(int value)
-        {
-            m_format ??= string.Empty;
-            m_text.text = string.Format(value.ToString(), m_format);
-        }
 
         private void OnDisable()
         {
             m_scoreManager.RecordChanged -= OnRecordChanged;
         }
 
-
+        private void OnRecordChanged(int value)
+        {
+            m_format ??= string.Empty;
+            m_text.text = string.Format(m_format, value.ToString());
+        }
     }
 }
