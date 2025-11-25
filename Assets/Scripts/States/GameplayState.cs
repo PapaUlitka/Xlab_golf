@@ -19,6 +19,9 @@ namespace Golf
         [SerializeField] private Button m_firstUpgrade;
         [SerializeField] private Button m_secondUpgrade;
         [SerializeField] private Button m_backButton;
+        [SerializeField] private Button m_achButton;
+        [SerializeField] private GameObject m_achPanel;
+        [SerializeField] private Button m_achBackButton;
 
         private GameStateMachine m_gamestateMachine;
         public override void Initialize(GameStateMachine gameStateMachine)
@@ -34,15 +37,27 @@ namespace Golf
             OnScoreChanged(m_scoreManager.score);
             m_gameplayPanel.SetActive(true);
 
+            m_achButton.onClick.AddListener(ShowAchivements);
             m_upgradeButton.onClick.AddListener(ShowUpgradePanel);
             m_firstUpgrade.onClick.AddListener(OnFirstUpgrade);
             m_secondUpgrade.onClick.AddListener(OnSecondUpgrade);
             m_backButton.onClick.AddListener(OnClose);
+            m_achBackButton.onClick.AddListener(OnAchBack);
 
             m_levelController.enabled = true;
             m_playerController.enabled = true;
             m_levelController.Initialize();
             m_levelController.Finished += OnFinished;
+        }
+
+        private void OnAchBack()
+        {
+            m_achPanel.SetActive(false);
+        }
+
+        private void ShowAchivements()
+        {
+            m_achPanel.SetActive(true);
         }
 
         private void OnClose()
