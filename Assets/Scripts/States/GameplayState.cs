@@ -74,7 +74,6 @@ namespace Golf
             }
 
         }
-
         private void OnFirstUpgrade()
         {
             if (m_scoreManager.score >= 1)

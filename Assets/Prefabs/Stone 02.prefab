@@ -100,7 +100,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5003306062485533567}
   serializedVersion: 5
-  m_Mass: 0.5
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -153,3 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803b5c53cda3908489e5700bdeda9bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoneComponent
+  m_data:
+  - {fileID: 11400000, guid: f5fefbcc651ba4b4db832d50af618ed6, type: 2}
+  - {fileID: 11400000, guid: 6ffad475fea7f964fa26017b21ea7f3e, type: 2}
+  - {fileID: 11400000, guid: dee4842d34eab9d43bdb66efb624e95b, type: 2}

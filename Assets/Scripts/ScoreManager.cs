@@ -42,9 +42,9 @@ namespace Golf
             score = 0;
         }
 
-        public void Increase()
+        public void Increase(int value)
         {
-            score++;
+            score+= value;
         }
         public void UpdateRecord() => record = score;
     }

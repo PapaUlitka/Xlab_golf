@@ -8,10 +8,17 @@ namespace Golf
     {
         public event Action<StoneComponent> Hit;
         public event Action<StoneComponent> Missed;
+
+        [SerializeField] private StoneData[] m_data;
+
         private Rigidbody m_rigidbody;
+
+        public int score { get; private set; }
+
         private void Awake()
         {
             m_rigidbody = GetComponent<Rigidbody>();
+            score = m_data[UnityEngine.Random.Range(0, m_data.Length)].score;
         }
         private void OnCollisionEnter(Collision collision)
         {
